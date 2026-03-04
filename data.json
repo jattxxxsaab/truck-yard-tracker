@@ -21,7 +21,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "Price increased",
-      "zillow": "https://www.zillow.com/homes/3845-S-El-Dorado-St-Stockton-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/3845-S-El-Dorado-St-Stockton-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/stockton-ca/for-sale/"
     },
     {
       "address": "4649 S Airport Way",
@@ -36,7 +37,8 @@
       "status": "active",
       "dateFound": "2026-03-03",
       "notes": "New listing",
-      "zillow": "https://www.zillow.com/homes/4649-S-Airport-Way-Stockton-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/4649-S-Airport-Way-Stockton-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/stockton-ca/for-sale/"
     },
     {
       "address": "4082 E Frontage Rd",
@@ -51,7 +53,8 @@
       "status": "active",
       "dateFound": "2026-03-03",
       "notes": "New listing",
-      "zillow": "https://www.zillow.com/homes/4082-E-Frontage-Rd-Stockton-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/4082-E-Frontage-Rd-Stockton-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/stockton-ca/for-sale/"
     },
     {
       "address": "4475 Farm Supply Dr",
@@ -66,7 +69,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "Draft email sent to Herman Bhatti",
-      "zillow": "https://www.zillow.com/homes/4475-Farm-Supply-Dr-Ceres-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/4475-Farm-Supply-Dr-Ceres-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/ceres-ca/for-sale/"
     },
     {
       "address": "2242-2272 Hoover Ave",
@@ -81,7 +85,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/2242-Hoover-Ave-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/2242-Hoover-Ave-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "427 Doherty Ave",
@@ -96,7 +101,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/427-Doherty-Ave-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/427-Doherty-Ave-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "2068 Lapham Dr",
@@ -111,7 +117,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/2068-Lapham-Dr-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/2068-Lapham-Dr-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "2084 Lapham Dr",
@@ -126,7 +133,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/2084-Lapham-Dr-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/2084-Lapham-Dr-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "1601 Mono Dr",
@@ -141,7 +149,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "Draft emails to Danny Price & Randy High (PMZ Commercial)",
-      "zillow": "https://www.zillow.com/homes/1601-Mono-Dr-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/1601-Mono-Dr-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "3173 Del Este Ave",
@@ -156,7 +165,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/3173-Del-Este-Ave-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/3173-Del-Este-Ave-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "1200 Graphics Dr",
@@ -171,7 +181,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/1200-Graphics-Dr-Modesto-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/1200-Graphics-Dr-Modesto-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/modesto-ca/for-sale/"
     },
     {
       "address": "1475 Moffat Blvd",
@@ -186,7 +197,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/1475-Moffat-Blvd-Manteca-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/1475-Moffat-Blvd-Manteca-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/manteca-ca/for-sale/"
     },
     {
       "address": "600-626 Commerce Ct",
@@ -201,7 +213,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/600-Commerce-Ct-Manteca-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/600-Commerce-Ct-Manteca-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/manteca-ca/for-sale/"
     },
     {
       "address": "Hwy 120",
@@ -216,7 +229,8 @@
       "status": "active",
       "dateFound": "2026-03-03",
       "notes": "New listing - contact for details",
-      "zillow": ""
+      "zillow": "",
+      "sourceUrl": ""
     },
     {
       "address": "11150 Hwy 120 E",
@@ -231,7 +245,8 @@
       "status": "active",
       "dateFound": "2026-03-01",
       "notes": "LoopNet #35280458",
-      "zillow": "https://www.zillow.com/homes/11150-Hwy-120-E-Manteca-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/11150-Hwy-120-E-Manteca-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/Listing/11150-E-State-Route-120-Manteca-CA/35280458/"
     },
     {
       "address": "Arman Singh Property",
@@ -246,7 +261,8 @@
       "status": "active",
       "dateFound": "2026-03-01",
       "notes": "Arman Singh: armanrealtor1@gmail.com, 209-603-9890. Draft email sent.",
-      "zillow": ""
+      "zillow": "",
+      "sourceUrl": ""
     },
     {
       "address": "2777 N Hwy 59",
@@ -261,7 +277,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/2777-N-Hwy-59-Merced-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/2777-N-Hwy-59-Merced-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/merced-ca/for-sale/"
     },
     {
       "address": "140 Macready Dr",
@@ -276,7 +293,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/140-Macready-Dr-Merced-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/140-Macready-Dr-Merced-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/merced-ca/for-sale/"
     },
     {
       "address": "3722 E Hwy 140",
@@ -291,7 +309,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/3722-E-Hwy-140-Merced-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/3722-E-Hwy-140-Merced-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/merced-ca/for-sale/"
     },
     {
       "address": "30 W Sandy Mush Rd",
@@ -306,7 +325,8 @@
       "status": "active",
       "dateFound": "2026-02-28",
       "notes": "",
-      "zillow": "https://www.zillow.com/homes/30-W-Sandy-Mush-Rd-Merced-CA_rb/"
+      "zillow": "https://www.zillow.com/homes/30-W-Sandy-Mush-Rd-Merced-CA_rb/",
+      "sourceUrl": "https://www.loopnet.com/search/commercial-real-estate/merced-ca/for-sale/"
     }
   ]
 }

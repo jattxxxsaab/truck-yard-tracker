@@ -215,8 +215,11 @@ function renderListings() {
     if (l.acres) badges += `<span class="badge sale">${l.acres} acres</span>`;
     
     let links = '';
+    if (l.sourceUrl) links += `<a href="${l.sourceUrl}" target="_blank">🔗 ${l.source} Listing</a>`;
+    else if (l.source === 'LoopNet') links += `<a href="https://www.loopnet.com/search/commercial-real-estate/${l.city.toLowerCase()}-ca/for-sale/" target="_blank">🔗 LoopNet Search</a>`;
+    else if (l.source === 'Crexi') links += `<a href="https://www.crexi.com/properties?q=${encodeURIComponent(l.city + ' CA')}" target="_blank">🔗 Crexi Search</a>`;
     if (l.zillow) links += `<a href="${l.zillow}" target="_blank">📍 Zillow</a>`;
-    if (l.source === 'LoopNet') links += `<a href="https://www.loopnet.com/search/commercial-real-estate/${l.city.toLowerCase()}-ca/for-sale/" target="_blank">🔗 LoopNet</a>`;
+    links += `<a href="https://www.google.com/maps/search/${encodeURIComponent(l.address + ' ' + l.city + ' CA')}" target="_blank">🗺️ Map</a>`;
     
     return `
       <div class="listing">
