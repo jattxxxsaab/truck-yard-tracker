@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚛 Truck Yard Tracker — Central Valley CA</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #f0883e;
+    --green: #3fb950;
+    --blue: #58a6ff;
+    --red: #f85149;
+    --purple: #bc8cff;
+    --sale: #f0883e;
+    --lease: #58a6ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  
+  .header { text-align: center; margin-bottom: 30px; }
+  .header h1 { font-size: 2em; margin-bottom: 8px; }
+  .header h1 span { color: var(--accent); }
+  .header .subtitle { color: var(--muted); font-size: 0.95em; }
+  .header .updated { color: var(--muted); font-size: 0.85em; margin-top: 5px; }
+  
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+  .stat-card .label { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  
+  .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+  .controls select, .controls input { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 0.9em; }
+  .controls input { flex: 1; min-width: 200px; }
+  .controls select { min-width: 140px; }
+  
+  .tab-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; cursor: pointer; font-size: 0.9em; color: var(--muted); transition: all 0.2s; }
+  .tab:hover { border-color: var(--accent); color: var(--text); }
+  .tab.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
+  .tab .count { font-size: 0.8em; opacity: 0.7; margin-left: 4px; }
+  
+  .listings { display: grid; gap: 15px; }
+  .listing { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s; }
+  .listing:hover { border-color: var(--accent); }
+  .listing .top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  .listing .address { font-size: 1.15em; font-weight: 600; }
+  .listing .city { color: var(--blue); font-size: 0.85em; }
+  .listing .price { font-size: 1.3em; font-weight: 700; color: var(--green); }
+  .listing .price.contact { color: var(--muted); font-size: 1em; }
+  .listing .badges { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
+  .badge { padding: 3px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600; text-transform: uppercase; }
+  .badge.sale { background: rgba(240,136,62,0.15); color: var(--sale); border: 1px solid rgba(240,136,62,0.3); }
+  .badge.lease { background: rgba(88,166,255,0.15); color: var(--lease); border: 1px solid rgba(88,166,255,0.3); }
+  .badge.new { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+  .badge.best { background: rgba(188,140,255,0.15); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
+  .listing .details { color: var(--muted); font-size: 0.9em; margin: 6px 0; }
+  .listing .meta { display: flex; gap: 15px; font-size: 0.8em; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+  .listing .meta span { display: flex; align-items: center; gap: 4px; }
+  .listing .notes { font-size: 0.85em; color: var(--accent); margin-top: 8px; font-style: italic; }
+  .listing .links { margin-top: 10px; display: flex; gap: 10px; }
+  .listing .links a { color: var(--blue); text-decoration: none; font-size: 0.85em; }
+  .listing .links a:hover { text-decoration: underline; }
+  
+  .no-results { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .no-results .icon { font-size: 3em; margin-bottom: 10px; }
+  
+  .map-section { margin-bottom: 30px; }
+  .map-section h2 { font-size: 1.2em; margin-bottom: 10px; color: var(--muted); }
+  
+  .footer { text-align: center; color: var(--muted); font-size: 0.8em; margin-top: 40px; padding: 20px; border-top: 1px solid var(--border); }
+  
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .header h1 { font-size: 1.5em; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .listing .top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚛 <span>Truck Yard Tracker</span></h1>
+  <div class="subtitle">Central Valley CA — Modesto · Ceres · Turlock · Ripon · Stockton · Manteca · Merced</div>
+  <div class="updated" id="lastUpdated">Loading...</div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="tab-bar" id="tabs"></div>
+
+<div class="controls">
+  <select id="typeFilter">
+    <option value="all">All Types</option>
+    <option value="sale">For Sale</option>
+    <option value="lease">For Lease</option>
+  </select>
+  <select id="sortBy">
+    <option value="price-asc">Price: Low → High</option>
+    <option value="price-desc">Price: High → Low</option>
+    <option value="date">Date Found: Newest</option>
+    <option value="city">City A-Z</option>
+  </select>
+  <input type="text" id="search" placeholder="🔍 Search address, city, notes...">
+</div>
+
+<div class="listings" id="listings"></div>
+
+<div class="footer">
+  🐕 Powered by Jaks — Updated daily at 10 AM PST<br>
+  Tracking truck yards & repair shops across 7 Central Valley cities
+</div>
+
+<script>
+let allData = null;
+let activeCity = 'all';
+
+async function loadData() {
+  try {
+    const res = await fetch('data.json?' + Date.now());
+    allData = await res.json();
+    renderAll();
+  } catch(e) {
+    document.getElementById('listings').innerHTML = '<div class="no-results"><div class="icon">⚠️</div>Failed to load data</div>';
+  }
+}
+
+function renderAll() {
+  renderUpdated();
+  renderStats();
+  renderTabs();
+  renderListings();
+}
+
+function renderUpdated() {
+  const d = new Date(allData.lastUpdated);
+  document.getElementById('lastUpdated').textContent = 'Last updated: ' + d.toLocaleDateString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'numeric', minute:'2-digit', timeZone:'America/Los_Angeles'});
+}
+
+function renderStats() {
+  const s = allData.summary;
+  const listings = allData.listings;
+  const priced = listings.filter(l => l.priceNum > 0);
+  const cheapest = priced.length ? '$' + Math.min(...priced.map(l=>l.priceNum)).toLocaleString() : 'N/A';
+  
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-card"><div class="num">${s.totalListings}</div><div class="label">Total Listings</div></div>
+    <div class="stat-card"><div class="num">${s.forSale}</div><div class="label">For Sale</div></div>
+    <div class="stat-card"><div class="num">${s.forLease}</div><div class="label">For Lease</div></div>
+    <div class="stat-card"><div class="num">${s.cities}</div><div class="label">Cities</div></div>
+    <div class="stat-card"><div class="num" style="font-size:1.2em;color:var(--green)">${cheapest}</div><div class="label">Lowest Price</div></div>
+  `;
+}
+
+function renderTabs() {
+  const cities = {};
+  allData.listings.forEach(l => {
+    cities[l.city] = (cities[l.city] || 0) + 1;
+  });
+  
+  let html = `<div class="tab ${activeCity==='all'?'active':''}" onclick="setCity('all')">All<span class="count">(${allData.listings.length})</span></div>`;
+  Object.keys(cities).sort().forEach(city => {
+    html += `<div class="tab ${activeCity===city?'active':''}" onclick="setCity('${city}')">${city}<span class="count">(${cities[city]})</span></div>`;
+  });
+  document.getElementById('tabs').innerHTML = html;
+}
+
+function setCity(city) {
+  activeCity = city;
+  renderTabs();
+  renderListings();
+}
+
+function renderListings() {
+  let listings = [...allData.listings];
+  const typeFilter = document.getElementById('typeFilter').value;
+  const sortBy = document.getElementById('sortBy').value;
+  const search = document.getElementById('search').value.toLowerCase();
+  
+  if (activeCity !== 'all') listings = listings.filter(l => l.city === activeCity);
+  if (typeFilter !== 'all') listings = listings.filter(l => l.type === typeFilter);
+  if (search) listings = listings.filter(l => 
+    (l.address + ' ' + l.city + ' ' + l.description + ' ' + l.notes).toLowerCase().includes(search)
+  );
+  
+  switch(sortBy) {
+    case 'price-asc': listings.sort((a,b) => (a.priceNum||99999999) - (b.priceNum||99999999)); break;
+    case 'price-desc': listings.sort((a,b) => (b.priceNum||0) - (a.priceNum||0)); break;
+    case 'date': listings.sort((a,b) => new Date(b.dateFound) - new Date(a.dateFound)); break;
+    case 'city': listings.sort((a,b) => a.city.localeCompare(b.city)); break;
+  }
+  
+  if (!listings.length) {
+    document.getElementById('listings').innerHTML = '<div class="no-results"><div class="icon">🔍</div>No listings match your filters</div>';
+    return;
+  }
+  
+  const today = new Date();
+  const threeDaysAgo = new Date(today - 3*24*60*60*1000);
+  
+  document.getElementById('listings').innerHTML = listings.map(l => {
+    const isNew = new Date(l.dateFound) >= threeDaysAgo;
+    const isBest = l.description.includes('BEST VALUE');
+    const priceClass = l.priceNum > 0 ? '' : 'contact';
+    const typeClass = l.type === 'lease' ? 'lease' : 'sale';
+    
+    let badges = `<span class="badge ${typeClass}">${l.type === 'lease' ? '🏷️ For Lease' : '💰 For Sale'}</span>`;
+    if (isNew) badges += '<span class="badge new">✨ New</span>';
+    if (isBest) badges += '<span class="badge best">⭐ Best Value</span>';
+    if (l.acres) badges += `<span class="badge sale">${l.acres} acres</span>`;
+    
+    let links = '';
+    if (l.zillow) links += `<a href="${l.zillow}" target="_blank">📍 Zillow</a>`;
+    if (l.source === 'LoopNet') links += `<a href="https://www.loopnet.com/search/commercial-real-estate/${l.city.toLowerCase()}-ca/for-sale/" target="_blank">🔗 LoopNet</a>`;
+    
+    return `
+      <div class="listing">
+        <div class="top">
+          <div>
+            <div class="address">${l.address}</div>
+            <div class="city">📍 ${l.city}, CA</div>
+          </div>
+          <div class="price ${priceClass}">${l.price}</div>
+        </div>
+        <div class="badges">${badges}</div>
+        <div class="details">${l.description}</div>
+        <div class="meta">
+          <span>📅 Found: ${l.dateFound}</span>
+          <span>📋 Source: ${l.source}</span>
+          ${l.sqft ? `<span>📐 ${l.sqft.toLocaleString()} sqft</span>` : ''}
+          ${l.type === 'lease' && l.rent ? `<span>💵 ${l.rent}/mo</span>` : ''}
+        </div>
+        ${l.notes ? `<div class="notes">📝 ${l.notes}</div>` : ''}
+        ${links ? `<div class="links">${links}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+document.getElementById('typeFilter').addEventListener('change', renderListings);
+document.getElementById('sortBy').addEventListener('change', renderListings);
+document.getElementById('search').addEventListener('input', renderListings);
+
+loadData();
+</script>
+</body>
+</html>
