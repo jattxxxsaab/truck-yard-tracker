@@ -1,8 +1,8 @@
 {
   "lastUpdated": "2026-03-04T17:45:00-08:00",
   "summary": {
-    "totalListings": 20,
-    "forSale": 20,
+    "totalListings": 19,
+    "forSale": 19,
     "forLease": 0,
     "cities": 7,
     "priceRange": "$400K - $15.9M"
@@ -183,22 +183,6 @@
       "notes": "",
       "zillow": "https://www.zillow.com/homes/1200-Graphics-Dr-Modesto-CA_rb/",
       "sourceUrl": "https://www.loopnet.com/Listing/1200-Graphics-Dr-Modesto-CA/38235923/"
-    },
-    {
-      "address": "1475 Moffat Blvd",
-      "city": "Manteca",
-      "price": "$1,795,000",
-      "priceNum": 1795000,
-      "type": "sale",
-      "acres": null,
-      "sqft": null,
-      "description": "Commercial truck yard",
-      "source": "LoopNet",
-      "status": "active",
-      "dateFound": "2026-02-28",
-      "notes": "",
-      "zillow": "https://www.zillow.com/homes/1475-Moffat-Blvd-Manteca-CA_rb/",
-      "sourceUrl": "https://www.loopnet.com/Listing/1475-Moffat-Blvd-Manteca-CA/11464898/"
     },
     {
       "address": "600-626 Commerce Ct",
