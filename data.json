@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-03-04T17:54:00-08:00",
+  "lastUpdated": "2026-03-08T10:03:00-08:00",
   "summary": {
-    "totalListings": 27,
+    "totalListings": 28,
     "forSale": 19,
-    "forLease": 8,
+    "forLease": 9,
     "cities": 7,
     "priceRange": "$400K - $15.9M",
     "leaseRange": "$175/spot - $39K/mo"
@@ -321,7 +321,7 @@
       "type": "lease",
       "acres": 4.93,
       "sqft": 23650,
-      "description": "Truck/Construction Yard on 7.02± acres. 23,650 SF industrial bldg, 1,800 SF office, 9 cranes, 2 wash racks, permitted dismantling yard. I-G zoning, Opportunity Zone. Near Hwy 4/I-5/Hwy 99.",
+      "description": "Truck/Construction Yard on 7.02\u00b1 acres. 23,650 SF industrial bldg, 1,800 SF office, 9 cranes, 2 wash racks, permitted dismantling yard. I-G zoning, Opportunity Zone. Near Hwy 4/I-5/Hwy 99.",
       "source": "LoopNet",
       "status": "active",
       "dateFound": "2026-03-04",
@@ -337,7 +337,7 @@
       "type": "lease",
       "acres": 3.84,
       "sqft": null,
-      "description": "Fenced, paved, lighted truck yard. ±94 trailer positions, yard lighting, concrete dolly pads. 3.84 acres.",
+      "description": "Fenced, paved, lighted truck yard. \u00b194 trailer positions, yard lighting, concrete dolly pads. 3.84 acres.",
       "source": "Crexi / JLL",
       "status": "active",
       "dateFound": "2026-03-04",
@@ -440,6 +440,34 @@
       "notes": "Found on Crexi land lease search for Modesto.",
       "contact": "",
       "sourceUrl": "https://www.crexi.com/lease/properties/CA/Modesto/Land"
+    },
+    {
+      "address": "2929 S Highway 99",
+      "city": "Stockton",
+      "state": "CA",
+      "zip": "95215",
+      "type": "lease",
+      "propertyType": "Truck Terminal Facility",
+      "price": null,
+      "leaseRate": "Contact for pricing",
+      "size": "14,000 SF",
+      "lotSize": "2.95 AC",
+      "zoning": "I-G (General Industrial)",
+      "highlights": [
+        "\u00b12.88 acres with gated yard",
+        "10 dock doors (6 mechanical pit levelers, 4 edge of dock)",
+        "Excellent freeway access via HWY 99 / Mariposa Road Interchange",
+        "Direct HWY 99 visibility",
+        "14 ft clear height",
+        "Asphalt/compacted gravel gated yard",
+        "Built 1963, metal construction"
+      ],
+      "source": "LoopNet",
+      "url": "https://www.loopnet.com/Listing/2929-S-Highway-99-Stockton-CA/39391032/",
+      "dateFound": "2026-03-08",
+      "dateListed": "2026-02-10",
+      "status": "active",
+      "notes": "Truck Terminal with yard space on Highway 99. Colliers listing."
     }
   ]
 }
