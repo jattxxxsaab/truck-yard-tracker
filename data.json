@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-03-08T10:03:00-08:00",
+  "lastUpdated": "2026-03-11T10:03:00-07:00",
   "summary": {
-    "totalListings": 28,
-    "forSale": 19,
+    "totalListings": 29,
+    "forSale": 20,
     "forLease": 9,
     "cities": 7,
     "priceRange": "$400K - $15.9M",
@@ -12,8 +12,8 @@
     {
       "address": "3845 S El Dorado St",
       "city": "Stockton",
-      "price": "$5,750,000",
-      "priceNum": 5750000,
+      "price": "$5,500,000",
+      "priceNum": 5500000,
       "type": "sale",
       "acres": null,
       "sqft": null,
@@ -21,7 +21,7 @@
       "source": "LoopNet",
       "status": "active",
       "dateFound": "2026-02-28",
-      "notes": "Price increased. Not found on LoopNet; listed on MLS via Century 21 Select RE.",
+      "notes": "Price changed: was $5.75M, now listed at $5.5M on MLS (Weichert/Century 21). 4.78 acres, fully permitted, ~$41K/mo income. MLS #225093842.",
       "zillow": "https://www.zillow.com/homes/3845-S-El-Dorado-St-Stockton-CA_rb/",
       "sourceUrl": "https://www.compass.com/homedetails/3845-S-El-Dorado-St-Stockton-CA-95206/1R6Z9J_pid/"
     },
@@ -468,6 +468,22 @@
       "dateListed": "2026-02-10",
       "status": "active",
       "notes": "Truck Terminal with yard space on Highway 99. Colliers listing."
+    },
+    {
+      "address": "501 Hosmer Ave",
+      "city": "Modesto",
+      "state": "CA",
+      "price": "Contact",
+      "priceNum": 0,
+      "type": "sale",
+      "acres": 1.08,
+      "sqft": null,
+      "description": "1.08 acre property with approved plans for truck repair and truck parking. Industrial zoning.",
+      "source": "Crexi",
+      "status": "active",
+      "dateFound": "2026-03-11",
+      "notes": "Found via Crexi/web search. Approved plans for truck repair/parking - strong candidate. Verify pricing and listing agent.",
+      "sourceUrl": "https://www.crexi.com/properties/CA/Modesto/Industrial"
     }
   ]
 }
