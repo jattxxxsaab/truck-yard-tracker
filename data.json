@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-03-14T10:02:00-07:00",
+  "lastUpdated": "2026-03-15T17:03:00-07:00",
   "summary": {
-    "totalListings": 37,
-    "forSale": 26,
+    "totalListings": 38,
+    "forSale": 27,
     "forLease": 11,
-    "cities": 7,
+    "cities": 8,
     "priceRange": "$400K - $32.9M",
     "leaseRange": "$175/spot - $39K/mo"
   },
@@ -473,8 +473,8 @@
       "address": "501 Hosmer Ave",
       "city": "Modesto",
       "state": "CA",
-      "price": "Contact",
-      "priceNum": 0,
+      "price": "$1,200,000",
+      "priceNum": 1200000,
       "type": "sale",
       "acres": 1.08,
       "sqft": null,
@@ -482,7 +482,7 @@
       "source": "Crexi",
       "status": "active",
       "dateFound": "2026-03-11",
-      "notes": "Found via Crexi/web search. Approved plans for truck repair/parking - strong candidate. Verify pricing and listing agent.",
+      "notes": "Price updated from search results. Approved plans for truck repair/parking - strong candidate. Verify listing agent.",
       "sourceUrl": "https://www.crexi.com/properties/CA/Modesto/Industrial"
     },
     {
@@ -596,6 +596,22 @@
       "dateFound": "2026-03-14",
       "notes": "Large industrial parcel with significant development potential.",
       "sourceUrl": "https://www.crexi.com/properties/CA/Turlock/Industrial-Land"
+    },
+    {
+      "address": "1551 & 1601 N Jack Tone Road",
+      "city": "Ripon",
+      "state": "CA",
+      "price": "Contact",
+      "priceNum": 0,
+      "type": "sale",
+      "acres": 22.6,
+      "sqft": null,
+      "description": "22.60-acre industrial land parcel strategically located near Highway 99 and Jack Tone Road interchange. Adjacent to Flying J and Love's truck stops. STAA Approved Truck Route.",
+      "source": "Colliers",
+      "status": "active",
+      "dateFound": "2026-03-15",
+      "notes": "Mixed zoning: MU (4.96 acres) and C4 (17.64 acres). Excellent access to Highway 99, Highway 120, and Interstate 5. Prime location for truck terminal development.",
+      "sourceUrl": "https://www.colliersparrish.com/attachment.aspx?articleID=146874"
     }
   ]
 }
