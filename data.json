@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-03-20T10:01:00-07:00",
+  "lastUpdated": "2026-03-21T10:02:00-07:00",
   "summary": {
-    "totalListings": 76,
-    "forSale": 49,
-    "forLease": 27,
+    "totalListings": 79,
+    "forSale": 50,
+    "forLease": 29,
     "cities": 9,
     "priceRange": "$400K - $32.9M",
     "leaseRange": "$175/spot - $39K/mo"
@@ -741,6 +741,54 @@
       "dateFound": "2026-03-19",
       "notes": "Airport business center location with truck-friendly layout and industrial zoning.",
       "sourceUrl": "https://www.buzzoates.com/portfolio/2385-arch-airport-road/"
+    },
+    {
+      "address": "1188 S Airport Way",
+      "city": "Stockton",
+      "state": "CA",
+      "price": "Contact for lease rates",
+      "priceNum": 0,
+      "type": "lease",
+      "acres": 2.1,
+      "sqft": 30000,
+      "description": "30,000 SF industrial facility with large 45,000 SF yard (37,000 SF paved). 19,100 SF available for lease. 7 loading docks, 5 grade-level doors, 19' clear height, freight elevator, fire sprinkler system.",
+      "source": "LoopNet/PropertyShark",
+      "status": "active",
+      "dateFound": "2026-03-21",
+      "notes": "IL (Light Industrial) zoning, 2000 amp electrical, multi-tenant configuration possible. Built 1967, metal construction.",
+      "sourceUrl": "https://www.loopnet.com/Listing/1188-S-Airport-Way-Stockton-CA/39254653/"
+    },
+    {
+      "address": "6520 Aviation Dr",
+      "city": "Stockton",
+      "state": "CA",
+      "price": "Contact for lease rates",
+      "priceNum": 0,
+      "type": "lease",
+      "acres": 7.2,
+      "sqft": null,
+      "description": "7.20-acre Class A trailer yard with ~120 trailer spaces, 4 ADA stalls. Fully fenced, secured, drained, lit with guard shack. Strategic location 4 miles from Highway 99, 1.5 miles from I-5.",
+      "source": "CBRE",
+      "status": "active",
+      "dateFound": "2026-03-21",
+      "notes": "1 mile from Stockton Metropolitan Airport, 6.2 miles from BNSF Intermodal, 11 miles from UP Intermodal.",
+      "sourceUrl": "https://www.cbre.com/properties/properties-for-lease/land/details/US-SMPL-172117/6520-aviation-drive-stockton-ca-95206"
+    },
+    {
+      "address": "Auto/Truck/Trailer Repair Shop",
+      "city": "Manteca",
+      "state": "CA",
+      "price": "$90,000 down payment",
+      "priceNum": 90000,
+      "type": "sale",
+      "acres": null,
+      "sqft": null,
+      "description": "ASE Certified auto, truck, and trailer repair shop with 4 bays. Growing sales trend, 15-year lease option available. Current rent $2,200/month, estimated net income $72,000/year.",
+      "source": "SellingRestaurants.com",
+      "status": "active",
+      "dateFound": "2026-03-21",
+      "notes": "Business for sale on busy road location. Seller financing available for inventory.",
+      "sourceUrl": "https://sellingrestaurants.com/restaurant-for-sale/auto-repair-shop-for-sale-manteca-ca"
     }
   ]
 }
