@@ -1,0 +1,53 @@
+TRUCK YARD SEARCH ANALYSIS - March 22, 2026
+
+EXISTING DATA SUMMARY:
+- Total listings: 79 (50 for sale, 29 for lease)
+- Last updated: 2026-03-21T10:02:00-07:00
+
+POTENTIAL NEW LISTINGS FOUND:
+
+MODESTO:
+✓ NEW: 1224 Kiernan Ave - 20.31 acres, $700,000 (not in existing data)
+✓ NEW: 536 Mariposa Rd - Industrial Opportunity Zone (not in existing data) 
+✓ NEW: 690 Crows Landing Rd - $830,000 (not in existing data)
+✓ NEW: 2936 Farrar Ave - Industrial with cranes, $4,235,000 (not in existing data)
+✓ NEW: 5225 Pentecost Dr - $325,000 (not in existing data)
+✓ NEW: 5170 Pentecost Dr - 23,243 SF warehouse (not in existing data)
+✓ NEW: 1205 East Whitmore Avenue - 369,000 SF on 37.6 acres (not in existing data)
+✓ NEW: 2612 Crows Landing Road - 374,793 SF on 12.16 acres (not in existing data)
+✓ NEW: 1350 Lone Palm Avenue - 2,760 SF, $500,000 (not in existing data)
+
+MANTECA:
+✓ NEW: 17760 Ideal Pkwy - 1.10 acres, off-market (not in existing data)
+✓ NEW: 3011 Palm Ave - 28.45 acres, off-market (not in existing data) 
+✓ NEW: 2105 Airport Way - 21.17 acres, $7,409,500 (not in existing data)
+✓ NEW: 259 Swanson Rd - 5.23 acres, $3,500,000 (not in existing data)
+✓ NEW: Hwy 99 @ Lathrop Road - 1.17 acres, $1,300,000 (not in existing data)
+✓ NEW: 232 Swanson Road - 4 acres, $2,352,240 (not in existing data)
+✓ NEW: 2793 S Main St - 4.49 acres, $1,500,000 (not in existing data)
+
+TURLOCK:
+⚠ UPDATED: 3925 W Linwood Ave - NOW "Bankruptcy Sale" $2,400,000 (was "Contact" - price update)
+✓ NEW: Nowlin Ct - 4-25 acres, truck parking suitable (not in existing data)
+✓ NEW: 4001 W Linwood Avenue - $7,904,280 (not in existing data)
+✓ NEW: 2625 W Main St - 10.85 acres, $2,250,000 (not in existing data)
+✓ NEW: 501 Dianne Drive - 19 acres (not in existing data)
+
+CERES:
+✓ NEW: 3304 Central Ave - 47,200 sq ft parcels (not in existing data)
+✓ NEW: N Morgan Rd - 2.04 acres $495,000, 2.13 acres $400,000 (not in existing data)
+✓ NEW: 4376 Farm Supply Dr - 2.13 acres, $400,000 (not in existing data)
+
+RIPON:
+⚠ UPDATED: 1551 & 1601 N Jack Tone Road - NOW $2,979,504 (was "Contact" - price update)
+
+MERCED:
+✓ NEW: 3312 Beachwood Dr - Secure Yard truck parking lease $100-150/mo (not in existing data)
+✓ NEW: 2201 Cooper Avenue - 507,028 SF industrial lease (not in existing data)
+✓ NEW: 3058 Beachwood Dr - 49,522 SF industrial lease (not in existing data)
+✓ NEW: 150 Hawk Dr - 35,400 SF at $0.10/SF/MO lease (not in existing data)
+
+STOCKTON:
+No clearly new listings identified - existing coverage appears comprehensive
+
+TOTAL NEW LISTINGS: ~30 new properties identified
