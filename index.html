@@ -1,255 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🚛 Truck Yard Tracker — Central Valley CA</title>
-<style>
-  :root {
-    --bg: #0d1117;
-    --card: #161b22;
-    --border: #30363d;
-    --text: #e6edf3;
-    --muted: #8b949e;
-    --accent: #f0883e;
-    --green: #3fb950;
-    --blue: #58a6ff;
-    --red: #f85149;
-    --purple: #bc8cff;
-    --sale: #f0883e;
-    --lease: #58a6ff;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px; max-width: 1400px; margin: 0 auto; }
-  
-  .header { text-align: center; margin-bottom: 30px; }
-  .header h1 { font-size: 2em; margin-bottom: 8px; }
-  .header h1 span { color: var(--accent); }
-  .header .subtitle { color: var(--muted); font-size: 0.95em; }
-  .header .updated { color: var(--muted); font-size: 0.85em; margin-top: 5px; }
-  
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
-  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
-  .stat-card .num { font-size: 2em; font-weight: 700; color: var(--accent); }
-  .stat-card .label { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
-  
-  .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
-  .controls select, .controls input { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 0.9em; }
-  .controls input { flex: 1; min-width: 200px; }
-  .controls select { min-width: 140px; }
-  
-  .tab-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .tab { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; cursor: pointer; font-size: 0.9em; color: var(--muted); transition: all 0.2s; }
-  .tab:hover { border-color: var(--accent); color: var(--text); }
-  .tab.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
-  .tab .count { font-size: 0.8em; opacity: 0.7; margin-left: 4px; }
-  
-  .listings { display: grid; gap: 15px; }
-  .listing { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s; }
-  .listing:hover { border-color: var(--accent); }
-  .listing .top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
-  .listing .address { font-size: 1.15em; font-weight: 600; }
-  .listing .city { color: var(--blue); font-size: 0.85em; }
-  .listing .price { font-size: 1.3em; font-weight: 700; color: var(--green); }
-  .listing .price.contact { color: var(--muted); font-size: 1em; }
-  .listing .badges { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
-  .badge { padding: 3px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600; text-transform: uppercase; }
-  .badge.sale { background: rgba(240,136,62,0.15); color: var(--sale); border: 1px solid rgba(240,136,62,0.3); }
-  .badge.lease { background: rgba(88,166,255,0.15); color: var(--lease); border: 1px solid rgba(88,166,255,0.3); }
-  .badge.new { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
-  .badge.best { background: rgba(188,140,255,0.15); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
-  .listing .details { color: var(--muted); font-size: 0.9em; margin: 6px 0; }
-  .listing .meta { display: flex; gap: 15px; font-size: 0.8em; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
-  .listing .meta span { display: flex; align-items: center; gap: 4px; }
-  .listing .notes { font-size: 0.85em; color: var(--accent); margin-top: 8px; font-style: italic; }
-  .listing .links { margin-top: 10px; display: flex; gap: 10px; }
-  .listing .links a { color: var(--blue); text-decoration: none; font-size: 0.85em; }
-  .listing .links a:hover { text-decoration: underline; }
-  
-  .no-results { text-align: center; padding: 60px 20px; color: var(--muted); }
-  .no-results .icon { font-size: 3em; margin-bottom: 10px; }
-  
-  .map-section { margin-bottom: 30px; }
-  .map-section h2 { font-size: 1.2em; margin-bottom: 10px; color: var(--muted); }
-  
-  .footer { text-align: center; color: var(--muted); font-size: 0.8em; margin-top: 40px; padding: 20px; border-top: 1px solid var(--border); }
-  
-  @media (max-width: 600px) {
-    body { padding: 12px; }
-    .header h1 { font-size: 1.5em; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .listing .top { flex-direction: column; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truck Yard Intelligence Dashboard</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --panel-2: #16213a;
+      --border: #27324f;
+      --text: #e8eefc;
+      --muted: #9fb0d3;
+      --accent: #56a8ff;
+      --good: #41d98a;
+      --warn: #ffd166;
+      --bad: #ff6b6b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .last-updated {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .stat .value {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .controls {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .controls input,
+    .controls select {
+      width: 100%;
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .addr {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--good);
+    }
+
+    .chips {
+      margin: 8px 0;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--panel-2);
+    }
+
+    .chip.active { color: var(--good); border-color: rgba(65, 217, 138, 0.5); }
+    .chip.new { color: var(--accent); border-color: rgba(86, 168, 255, 0.5); }
+    .chip.updated { color: var(--warn); border-color: rgba(255, 209, 102, 0.5); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .kv {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .kv b { color: var(--muted); font-weight: 600; display: block; margin-bottom: 2px; }
+
+    .links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+  </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>🚛 <span>Truck Yard Tracker</span></h1>
-  <div class="subtitle">Central Valley CA — Modesto · Ceres · Turlock · Ripon · Stockton · Manteca · Merced</div>
-  <div class="updated" id="lastUpdated">Loading...</div>
-</div>
-
-<div class="stats" id="stats"></div>
-
-<div class="tab-bar" id="tabs"></div>
-
-<div class="controls">
-  <select id="typeFilter">
-    <option value="all">All Types</option>
-    <option value="sale">For Sale</option>
-    <option value="lease">For Lease</option>
-  </select>
-  <select id="sortBy">
-    <option value="price-asc">Price: Low → High</option>
-    <option value="price-desc">Price: High → Low</option>
-    <option value="date">Date Found: Newest</option>
-    <option value="city">City A-Z</option>
-  </select>
-  <input type="text" id="search" placeholder="🔍 Search address, city, notes...">
-</div>
-
-<div class="listings" id="listings"></div>
-
-<div class="footer">
-  🐕 Powered by Jaks — Updated daily at 10 AM PST<br>
-  Tracking truck yards & repair shops across 7 Central Valley cities
-</div>
-
-<script>
-let allData = null;
-let activeCity = 'all';
-
-async function loadData() {
-  try {
-    const res = await fetch('data.json?' + Date.now());
-    allData = await res.json();
-    renderAll();
-  } catch(e) {
-    document.getElementById('listings').innerHTML = '<div class="no-results"><div class="icon">⚠️</div>Failed to load data</div>';
-  }
-}
-
-function renderAll() {
-  renderUpdated();
-  renderStats();
-  renderTabs();
-  renderListings();
-}
-
-function renderUpdated() {
-  const d = new Date(allData.lastUpdated);
-  document.getElementById('lastUpdated').textContent = 'Last updated: ' + d.toLocaleDateString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'numeric', minute:'2-digit', timeZone:'America/Los_Angeles'});
-}
-
-function renderStats() {
-  const s = allData.summary;
-  const listings = allData.listings;
-  const priced = listings.filter(l => l.priceNum > 0);
-  const cheapest = priced.length ? '$' + Math.min(...priced.map(l=>l.priceNum)).toLocaleString() : 'N/A';
-  
-  document.getElementById('stats').innerHTML = `
-    <div class="stat-card"><div class="num">${s.totalListings}</div><div class="label">Total Listings</div></div>
-    <div class="stat-card"><div class="num">${s.forSale}</div><div class="label">For Sale</div></div>
-    <div class="stat-card"><div class="num">${s.forLease}</div><div class="label">For Lease</div></div>
-    <div class="stat-card"><div class="num">${s.cities}</div><div class="label">Cities</div></div>
-    <div class="stat-card"><div class="num" style="font-size:1.2em;color:var(--green)">${cheapest}</div><div class="label">Lowest Price</div></div>
-  `;
-}
-
-function renderTabs() {
-  const cities = {};
-  allData.listings.forEach(l => {
-    cities[l.city] = (cities[l.city] || 0) + 1;
-  });
-  
-  let html = `<div class="tab ${activeCity==='all'?'active':''}" onclick="setCity('all')">All<span class="count">(${allData.listings.length})</span></div>`;
-  Object.keys(cities).sort().forEach(city => {
-    html += `<div class="tab ${activeCity===city?'active':''}" onclick="setCity('${city}')">${city}<span class="count">(${cities[city]})</span></div>`;
-  });
-  document.getElementById('tabs').innerHTML = html;
-}
-
-function setCity(city) {
-  activeCity = city;
-  renderTabs();
-  renderListings();
-}
-
-function renderListings() {
-  let listings = [...allData.listings];
-  const typeFilter = document.getElementById('typeFilter').value;
-  const sortBy = document.getElementById('sortBy').value;
-  const search = document.getElementById('search').value.toLowerCase();
-  
-  if (activeCity !== 'all') listings = listings.filter(l => l.city === activeCity);
-  if (typeFilter !== 'all') listings = listings.filter(l => l.type === typeFilter);
-  if (search) listings = listings.filter(l => 
-    (l.address + ' ' + l.city + ' ' + l.description + ' ' + l.notes).toLowerCase().includes(search)
-  );
-  
-  switch(sortBy) {
-    case 'price-asc': listings.sort((a,b) => (a.priceNum||99999999) - (b.priceNum||99999999)); break;
-    case 'price-desc': listings.sort((a,b) => (b.priceNum||0) - (a.priceNum||0)); break;
-    case 'date': listings.sort((a,b) => new Date(b.dateFound) - new Date(a.dateFound)); break;
-    case 'city': listings.sort((a,b) => a.city.localeCompare(b.city)); break;
-  }
-  
-  if (!listings.length) {
-    document.getElementById('listings').innerHTML = '<div class="no-results"><div class="icon">🔍</div>No listings match your filters</div>';
-    return;
-  }
-  
-  const today = new Date();
-  const threeDaysAgo = new Date(today - 3*24*60*60*1000);
-  
-  document.getElementById('listings').innerHTML = listings.map(l => {
-    const isNew = new Date(l.dateFound) >= threeDaysAgo;
-    const isBest = l.description.includes('BEST VALUE');
-    const priceClass = l.priceNum > 0 ? '' : 'contact';
-    const typeClass = l.type === 'lease' ? 'lease' : 'sale';
-    
-    let badges = `<span class="badge ${typeClass}">${l.type === 'lease' ? '🏷️ For Lease' : '💰 For Sale'}</span>`;
-    if (isNew) badges += '<span class="badge new">✨ New</span>';
-    if (isBest) badges += '<span class="badge best">⭐ Best Value</span>';
-    if (l.acres) badges += `<span class="badge sale">${l.acres} acres</span>`;
-    
-    let links = '';
-    if (l.sourceUrl) links += `<a href="${l.sourceUrl}" target="_blank">🔗 ${l.source} Listing</a>`;
-    else if (l.source === 'LoopNet') links += `<a href="https://www.loopnet.com/search/commercial-real-estate/${l.city.toLowerCase()}-ca/for-sale/" target="_blank">🔗 LoopNet Search</a>`;
-    else if (l.source === 'Crexi') links += `<a href="https://www.crexi.com/properties?q=${encodeURIComponent(l.city + ' CA')}" target="_blank">🔗 Crexi Search</a>`;
-    if (l.zillow) links += `<a href="${l.zillow}" target="_blank">📍 Zillow</a>`;
-    links += `<a href="https://www.google.com/maps/search/${encodeURIComponent(l.address + ' ' + l.city + ' CA')}" target="_blank">🗺️ Map</a>`;
-    
-    return `
-      <div class="listing">
-        <div class="top">
-          <div>
-            <div class="address">${l.address}</div>
-            <div class="city">📍 ${l.city}, CA</div>
-          </div>
-          <div class="price ${priceClass}">${l.price}</div>
-        </div>
-        <div class="badges">${badges}</div>
-        <div class="details">${l.description}</div>
-        <div class="meta">
-          <span>📅 Found: ${l.dateFound}</span>
-          <span>📋 Source: ${l.source}</span>
-          ${l.sqft ? `<span>📐 ${l.sqft.toLocaleString()} sqft</span>` : ''}
-          ${l.type === 'lease' && l.rent ? `<span>💵 ${l.rent}/mo</span>` : ''}
-        </div>
-        ${l.notes ? `<div class="notes">📝 ${l.notes}</div>` : ''}
-        ${links ? `<div class="links">${links}</div>` : ''}
+  <div class="wrap">
+    <div class="header">
+      <h1>Truck Yard Intelligence Dashboard</h1>
+      <div class="sub">
+        Cities: Ripon, Salida, Modesto, Ceres, Keyes, Turlock, Merced, Livingston, Winton<br />
+        Focus: Truck yards, RV parking, and truck mechanic opportunities with zoning validation.
       </div>
-    `;
-  }).join('');
-}
+      <div class="last-updated" id="lastUpdated">Last updated: --</div>
+    </div>
 
-document.getElementById('typeFilter').addEventListener('change', renderListings);
-document.getElementById('sortBy').addEventListener('change', renderListings);
-document.getElementById('search').addEventListener('input', renderListings);
+    <div class="stats" id="stats"></div>
 
-loadData();
-</script>
+    <div class="controls">
+      <input id="search" type="text" placeholder="Search address, city, source, notes" />
+      <select id="cityFilter"><option value="all">All cities</option></select>
+      <select id="statusFilter">
+        <option value="all">All statuses</option>
+        <option value="new">NEW</option>
+        <option value="updated">UPDATED</option>
+      </select>
+      <select id="typeFilter">
+        <option value="all">All types</option>
+        <option value="yard">Yard</option>
+        <option value="industrial">Industrial</option>
+        <option value="land">Land</option>
+      </select>
+      <select id="sortBy">
+        <option value="score">Sort by score</option>
+        <option value="recent">Most recent</option>
+        <option value="priceLow">Price low to high</option>
+        <option value="priceHigh">Price high to low</option>
+      </select>
+    </div>
+
+    <div class="list" id="listings"></div>
+  </div>
+
+  <script>
+    let data = { listings: [], summary: {} };
+
+    function num(v) {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function parsePrice(v) {
+      if (v == null) return null;
+      if (typeof v === 'number') return v;
+      const cleaned = String(v).replace(/[^0-9.]/g, '');
+      return cleaned ? Number(cleaned) : null;
+    }
+
+    function fmtDate(v) {
+      if (!v) return '--';
+      const d = new Date(v);
+      if (Number.isNaN(d.getTime())) return v;
+      return d.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' });
+    }
+
+    function fmtPrice(row) {
+      if (row.price) return row.price;
+      const p = parsePrice(row.priceNum);
+      return p ? `$${Math.round(p).toLocaleString()}` : 'Contact';
+    }
+
+    function scoreVal(row) {
+      return num(row.score) || 0;
+    }
+
+    function mapType(v) {
+      const t = String(v || '').toLowerCase();
+      if (t.includes('industrial')) return 'industrial';
+      if (t.includes('land')) return 'land';
+      if (t.includes('yard')) return 'yard';
+      return t || 'other';
+    }
+
+    function toStatus(row) {
+      const s = String(row.changeType || row.status || '').toLowerCase();
+      if (s.includes('new')) return 'new';
+      if (s.includes('updated')) return 'updated';
+      return 'existing';
+    }
+
+    function buildStats(listings) {
+      const newCount = listings.filter(x => toStatus(x) === 'new').length;
+      const updatedCount = listings.filter(x => toStatus(x) === 'updated').length;
+      const activeCount = listings.filter(x => String(x.listingStatus || x.status || '').toLowerCase().includes('active') || String(x.status || '').toLowerCase() === 'active').length;
+      const highScore = listings.filter(x => scoreVal(x) >= 4).length;
+
+      document.getElementById('stats').innerHTML = `
+        <div class="stat"><div class="label">Active listings</div><div class="value">${activeCount}</div></div>
+        <div class="stat"><div class="label">New today</div><div class="value">${newCount}</div></div>
+        <div class="stat"><div class="label">Updated today</div><div class="value">${updatedCount}</div></div>
+        <div class="stat"><div class="label">Score 4-5</div><div class="value">${highScore}</div></div>
+      `;
+    }
+
+    function populateCityFilter(listings) {
+      const cities = [...new Set(listings.map(x => x.city).filter(Boolean))].sort();
+      const el = document.getElementById('cityFilter');
+      el.innerHTML = '<option value="all">All cities</option>' + cities.map(c => `<option value="${c}">${c}</option>`).join('');
+    }
+
+    function renderListings() {
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      const city = document.getElementById('cityFilter').value;
+      const status = document.getElementById('statusFilter').value;
+      const type = document.getElementById('typeFilter').value;
+      const sortBy = document.getElementById('sortBy').value;
+
+      let rows = [...(data.listings || [])];
+
+      rows = rows.filter(r => {
+        const statusV = toStatus(r);
+        const typeV = mapType(r.type || r.propertyType);
+        const text = [r.address, r.city, r.source, r.claimedUse, r.notes, r.zoningDecision].join(' ').toLowerCase();
+        if (city !== 'all' && (r.city || '') !== city) return false;
+        if (status !== 'all' && statusV !== status) return false;
+        if (type !== 'all' && typeV !== type) return false;
+        if (q && !text.includes(q)) return false;
+        return true;
+      });
+
+      if (sortBy === 'score') rows.sort((a, b) => scoreVal(b) - scoreVal(a));
+      if (sortBy === 'recent') rows.sort((a, b) => new Date(b.lastSeen || b.dateFound || 0) - new Date(a.lastSeen || a.dateFound || 0));
+      if (sortBy === 'priceLow') rows.sort((a, b) => (parsePrice(a.priceNum || a.price) || Number.MAX_SAFE_INTEGER) - (parsePrice(b.priceNum || b.price) || Number.MAX_SAFE_INTEGER));
+      if (sortBy === 'priceHigh') rows.sort((a, b) => (parsePrice(b.priceNum || b.price) || 0) - (parsePrice(a.priceNum || a.price) || 0));
+
+      const host = document.getElementById('listings');
+      if (!rows.length) {
+        host.innerHTML = '<div class="empty">No listings match current filters.</div>';
+        return;
+      }
+
+      host.innerHTML = rows.map(r => {
+        const statusV = toStatus(r);
+        const score = scoreVal(r);
+        const confidence = r.confidence || '--';
+        const sourceUrl = r.sourceUrl || r.url || '';
+        const zoning = r.zoningDecision || r.zoning || '--';
+
+        return `
+          <div class="card">
+            <div class="top">
+              <div>
+                <div class="addr">${r.address || r.apn || 'Unknown property'}</div>
+                <div class="meta">${r.city || '--'} | ${r.type || r.propertyType || 'Unknown type'} | Last seen: ${fmtDate(r.lastSeen || r.dateFound)}</div>
+              </div>
+              <div class="price">${fmtPrice(r)}</div>
+            </div>
+
+            <div class="chips">
+              <span class="chip active">ACTIVE</span>
+              ${statusV === 'new' ? '<span class="chip new">NEW</span>' : ''}
+              ${statusV === 'updated' ? '<span class="chip updated">UPDATED</span>' : ''}
+              <span class="chip">Score ${score || '--'}</span>
+              <span class="chip">Confidence ${confidence}</span>
+              ${r.acres ? `<span class="chip">${r.acres} acres</span>` : ''}
+            </div>
+
+            <div class="grid">
+              <div class="kv"><b>Zoning</b>${zoning}</div>
+              <div class="kv"><b>Truck yard use</b>${r.truckYardUse || '--'}</div>
+              <div class="kv"><b>Mechanic shop use</b>${r.mechanicShopUse || '--'}</div>
+              <div class="kv"><b>Source</b>${r.source || '--'}</div>
+              <div class="kv"><b>Freeway proximity</b>${r.freewayProximity || '--'}</div>
+              <div class="kv"><b>Next step</b>${r.nextStep || '--'}</div>
+            </div>
+
+            ${(r.claimedUse || r.notes) ? `<div class="meta" style="margin-top:8px;">${r.claimedUse || r.notes}</div>` : ''}
+
+            <div class="links">
+              ${sourceUrl ? `<a href="${sourceUrl}" target="_blank" rel="noopener">Open source listing</a>` : ''}
+              ${(r.zoningSourceUrl || r.zoningSource) ? `<a href="${r.zoningSourceUrl || r.zoningSource}" target="_blank" rel="noopener">Open zoning source</a>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function init() {
+      try {
+        const res = await fetch('data.json?' + Date.now());
+        data = await res.json();
+      } catch (err) {
+        data = { listings: [], summary: {}, lastUpdated: null };
+      }
+
+      document.getElementById('lastUpdated').textContent = 'Last updated: ' + fmtDate(data.lastUpdated);
+      buildStats(data.listings || []);
+      populateCityFilter(data.listings || []);
+      renderListings();
+
+      ['search','cityFilter','statusFilter','typeFilter','sortBy'].forEach(id => {
+        document.getElementById(id).addEventListener('input', renderListings);
+        document.getElementById(id).addEventListener('change', renderListings);
+      });
+    }
+
+    init();
+  </script>
 </body>
 </html>
