@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-19T22:28:00.337236-07:00",
+  "lastUpdated": "2026-04-19T22:32:25.359034-07:00",
   "summary": {
     "citiesTracked": [
       "Ripon",
@@ -14,7 +14,7 @@
     ],
     "newToday": 0,
     "updatedToday": 0,
-    "totalActive": 48,
+    "totalActive": 47,
     "top3": [
       {
         "address": "3845 S El Dorado St",
@@ -99,28 +99,6 @@
       "mechanicShopUse": "Unclear",
       "claimedUse": "Commercial truck yard",
       "notes": "New listing. Listed as 4082 S St Rt 99 East Frontage Rd on LoopNet."
-    },
-    {
-      "address": "4475 Farm Supply Dr",
-      "city": "Ceres",
-      "type": "5.22 acre truck yard",
-      "propertyType": "sale",
-      "listingStatus": "ACTIVE",
-      "status": "active",
-      "price": "Contact",
-      "priceNum": 0,
-      "acres": 5.22,
-      "source": "LoopNet",
-      "sourceUrl": "https://www.loopnet.com/Listing/4475-Farm-Supply-Dr-Ceres-CA/38585185/",
-      "dateFound": "2026-02-28",
-      "lastSeen": "2026-02-28",
-      "score": 3,
-      "confidence": "Low",
-      "zoningDecision": "Unclear",
-      "truckYardUse": "Unclear",
-      "mechanicShopUse": "Unclear",
-      "claimedUse": "5.22 acre truck yard",
-      "notes": "Draft email sent to Herman Bhatti"
     },
     {
       "address": "2242-2272 Hoover Ave",
