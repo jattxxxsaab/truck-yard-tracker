@@ -1,0 +1,158 @@
+{
+  "validatedAt": "2026-04-19T22:36:36.968866-07:00",
+  "beforeCount": 47,
+  "afterCount": 17,
+  "removedCount": 30,
+  "removed": [
+    {
+      "address": "4649 S Airport Way",
+      "reason": "loopnet_no_longer_advertised",
+      "url": "https://www.loopnet.com/Listing/4649-S-Airport-Way-Stockton-CA/23830862/"
+    },
+    {
+      "address": "4082 E Frontage Rd",
+      "reason": "loopnet_no_longer_advertised",
+      "url": "https://www.loopnet.com/Listing/4082-S-St-Rt-99-East-Frontage-Rd-Stockton-CA/35690290/"
+    },
+    {
+      "address": "2242-2272 Hoover Ave",
+      "reason": "loopnet_no_longer_advertised",
+      "url": "https://www.loopnet.com/Listing/2242-2272-Hoover-Ave-Modesto-CA/39083794/"
+    },
+    {
+      "address": "Hwy 120",
+      "reason": "missing_source_url",
+      "url": ""
+    },
+    {
+      "address": "Arman Singh Property",
+      "reason": "missing_source_url",
+      "url": ""
+    },
+    {
+      "address": "3722 E Hwy 140",
+      "reason": "loopnet_http_404",
+      "url": "https://www.loopnet.com/property/3722-e-highway-140-merced-ca-95340/06047-063010053000/"
+    },
+    {
+      "address": "30 W Sandy Mush Rd",
+      "reason": "loopnet_no_longer_advertised",
+      "url": "https://www.loopnet.com/Listing/30-W-Sandy-Mush-Rd-Merced-CA/33414473/"
+    },
+    {
+      "address": "1425 Industrial Dr",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/lease/properties/CA/Stockton/Land"
+    },
+    {
+      "address": "788 E Childs Ave",
+      "reason": "loopnet_no_longer_advertised",
+      "url": "https://www.loopnet.com/Listing/788-E-Childs-Ave-Merced-CA/34062823/"
+    },
+    {
+      "address": "463 N Arboleda Dr",
+      "reason": "http_403",
+      "url": "https://www.commercialsearch.com/commercial-property/us/ca/merced/20-000-sf-of-fenced-industrial-yard-for-lease-merced-ca/"
+    },
+    {
+      "address": "1039 S Kilroy Rd",
+      "reason": "fetch_error",
+      "url": "https://semiyard.com/find-truck-parking/turlock/ca/1039-s-kilroy-rd"
+    },
+    {
+      "address": "795 S 7th St",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/lease/properties/CA/Modesto/Land"
+    },
+    {
+      "address": "2929 S Highway 99",
+      "reason": "missing_source_url",
+      "url": ""
+    },
+    {
+      "address": "501 Hosmer Ave",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Modesto/Industrial"
+    },
+    {
+      "address": "1136 Marchy Lane",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Ceres/Industrial"
+    },
+    {
+      "address": "1379 E Whitmore Ave",
+      "reason": "http_403",
+      "url": "https://realmo.com/industrial-land/for-sale/ca/ceres/"
+    },
+    {
+      "address": "3221 E Redwood Road",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Ceres/Industrial"
+    },
+    {
+      "address": "1140 Bessemer Ave",
+      "reason": "http_403",
+      "url": "https://realmo.com/industrial-properties/for-sale/ca/manteca/"
+    },
+    {
+      "address": "105 Industrial Park Dr",
+      "reason": "http_403",
+      "url": "https://www.commercialsearch.com/commercial-property/us/ca/manteca/manteca-industrial-park-9/"
+    },
+    {
+      "address": "3925 W Linwood Ave",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Turlock/Industrial-Land"
+    },
+    {
+      "address": "4012 W Tuolumne Road",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Turlock/Industrial-Land"
+    },
+    {
+      "address": "2234 Hoover Ave",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Modesto/Industrial"
+    },
+    {
+      "address": "2517 Yosemite Blvd",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/properties/CA/Modesto"
+    },
+    {
+      "address": "925 Crows Lndg Rd",
+      "reason": "http_403",
+      "url": "https://realmo.com/industrial-properties/for-sale/ca/modesto/"
+    },
+    {
+      "address": "Highway 88 near Comstock Rd",
+      "reason": "http_404",
+      "url": "https://stockton.craigslist.org/off/d/stockton-acre-yard-on-hwy-88-for-ag/7919374043.html"
+    },
+    {
+      "address": "1011 N Broadway Ave",
+      "reason": "fetch_error",
+      "url": "https://semiyard.com/locations/truck-parking-stockton-ca-1011-north-broadway-avenue"
+    },
+    {
+      "address": "1680 S Union St",
+      "reason": "http_403",
+      "url": "https://www.crexi.com/lease/properties/CA/Stockton/Land"
+    },
+    {
+      "address": "717 Ralph Ave",
+      "reason": "missing_source_url",
+      "url": ""
+    },
+    {
+      "address": "6520 Aviation Dr",
+      "reason": "http_403",
+      "url": "https://www.cbre.com/properties/properties-for-lease/land/details/US-SMPL-172117/6520-aviation-drive-stockton-ca-95206"
+    },
+    {
+      "address": "Auto/Truck/Trailer Repair Shop",
+      "reason": "inactive_keyword_on_page",
+      "url": "https://sellingrestaurants.com/restaurant-for-sale/auto-repair-shop-for-sale-manteca-ca"
+    }
+  ]
+}
